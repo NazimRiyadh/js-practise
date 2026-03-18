@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Chai aur code | DOM</title>
+    </head>
+    <body style="background-color: #212121; color: #fff">
+        <ul class="language">
+            <li>Javascript</li>
+        </ul>
+    </body>
+    <script>
+        function addLanguage(lang) {
+            const li = document.createElement("li"); // create element
+            li.innerHTML = lang; // set content
+
+            document
+                .querySelector(".language") // select ul
+                .appendChild(li); // append li
+        }
+
+        addLanguage("golang");
+        addLanguage("python");
+
+        //edit
+        const secondLang = document.querySelector("li:nth-child(2)");
+
+        secondLang.innerHTML = "mojo";
+
+        repl = document.createElement("li");
+        repl.innerHTML = "You have been replaced";
+
+        secondLang.replaceWith(repl);
+
+        //delete
+        const thirdLang = document.querySelector("li:nth-child(3)");
+        thirdLang.remove();
+    </script>
+</html>
